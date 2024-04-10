@@ -14,4 +14,9 @@ return "index";
 public String formulario(){
 return "formulario";
 }
+
+@GetMapping("/tablas")
+public String tabla01(){
+return "tablas";
+}
 }

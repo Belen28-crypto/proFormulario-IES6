@@ -9,18 +9,28 @@
 
 <body>
 
+    <style>
+        .navbar-brand, .nav-link {
+          background-color: rgb(228, 218, 228); /* Fondo morado */
+          color: rgb(124, 77, 77); /* Texto blanco */
+          border: none; /* con borde */
+          transition: background-color 0.3s; /* Transición suave */
+        }
+    
+        .navbar-brand:hover, .nav-link:hover {
+          background-color: red; /* Fondo rojo al pasar el ratón */
+        }
+      </style>
 
     <header>
 
        <h1>INSTITUTO DE EDUCACIÓN SUPERIOR N° 5 - SEDE PERICO</h1>
 
        <nav>
-        <a href="http://localhost:9097/">INICIO</a>
-
-        <a href="http://localhost:9097/formulario">DATOS DEL ALUMNO</a>
-    
-        <a href="boton3">TABLA DE ALUMNOS</a>
-       </nav>
+        <a class="navbar-brand" href="http://localhost:9097/">INICIO</a>
+        <a class="navbar-brand" href="http://localhost:9097/formulario">DATOS DEL ALUMNO</a>
+        <a class="navbar-brand" href="http://localhost:9097/tablas">TABLA DE ALUMNOS</a>
+    </nav>
 
     </header>
 
