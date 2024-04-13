@@ -60,7 +60,17 @@ public void setDNI (String DNI){
     this.telefono = telefono;
  }
 
+ public String Getdireccion(){
+   return direccion; 
+}
+public void Setdireccion(String direccion){
+   this.direccion = direccion;
+}
 
-
-
+public LocalDate GetfechaDeNacimiento(){
+   return fechaDeNacimiento; 
+}
+public void SetfechaDeNacimiento(LocalDate fechaDeNacimiento){
+   this.fechaDeNacimiento = fechaDeNacimiento;
+}
 }
