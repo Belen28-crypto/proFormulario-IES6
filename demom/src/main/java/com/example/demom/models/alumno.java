@@ -10,17 +10,17 @@ import java.time.LocalDate;
 @Entity 
 public class alumno {
     @Column
-    private String nombre;
+    private String Nombre;
     @Column
-    private String apellido;
+    private String Apellido;
     @Column 
-    private Integer edad;
+    private Integer Edad;
     @Column 
-    private String telefono;
+    private String Telefono;
     @Column
-    private String direccion;
+    private String Direccion;
     @Column 
-    private LocalDate fechaDeNacimiento;
+    private LocalDate FechaDeNacimiento;
     @Id
     private String DNI;
     @Column (name ="state")
@@ -28,49 +28,49 @@ private boolean state;
 
 // uso del Get y Set (constructores) 
 
-public String getDNI (){
+public String setDNI (){
     return DNI; 
 }
 public void setDNI (String DNI){
     this.DNI = DNI;
 } 
- public String getnombre(){
-    return nombre;
+ public String getNombre(){
+    return Nombre;
  }
- public void setnombre(String nombre){
-    this.nombre = nombre;
+ public void setNombre(String  Nombre){
+    this.Nombre=  Nombre;
  }
- public String Getapllido(){
-    return apellido;
+ public String GetApellido(){
+    return Apellido;
  }
- public void Setapellido(String apellido){
-    this.apellido = apellido;
+ public void SetApellido(String Apellido){
+    this.Apellido = Apellido;
  }
- public Integer Getedad(){
-    return edad; 
+ public Integer GetEdad(){
+    return Edad; 
  }
- public void Setedad(Integer edad){
-    this.edad = edad;
- }
-
- public String Gettelefono(){
-    return telefono; 
- }
- public void Settelefono(String telefono){
-    this.telefono = telefono;
+ public void SetEdad(Integer Edad){
+    this.Edad = Edad;
  }
 
- public String Getdireccion(){
-   return direccion; 
+ public String GetTelefono(){
+    return Telefono; 
+ }
+ public void SetTelefono(String Telefono){
+    this.Telefono = Telefono;
+ }
+
+ public String GetDireccion(){
+   return Direccion; 
 }
-public void Setdireccion(String direccion){
-   this.direccion = direccion;
+public void SetDireccion(String Direccion){
+   this.Direccion = Direccion;
 }
 
-public LocalDate GetfechaDeNacimiento(){
-   return fechaDeNacimiento; 
+public LocalDate GetFechaDeNacimiento(){
+   return FechaDeNacimiento; 
 }
-public void SetfechaDeNacimiento(LocalDate fechaDeNacimiento){
-   this.fechaDeNacimiento = fechaDeNacimiento;
+public void SetFechaDeNacimiento(LocalDate FechaDeNacimiento){
+   this.FechaDeNacimiento = FechaDeNacimiento;
 }
 }
