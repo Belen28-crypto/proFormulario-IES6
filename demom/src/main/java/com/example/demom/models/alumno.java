@@ -24,7 +24,7 @@ public class alumno {
     @Id
     private String DNI;
     @Column (name ="state")
-private boolean state;
+private boolean state = true;
 
 // uso del Get y Set (constructores) 
 
@@ -72,5 +72,11 @@ public LocalDate GetFechaDeNacimiento(){
 }
 public void SetFechaDeNacimiento(LocalDate FechaDeNacimiento){
    this.FechaDeNacimiento = FechaDeNacimiento;
+}
+public boolean GetState(){
+   return state; 
+}
+public void SetState(boolean State){
+   this.state= State;
 }
 }
