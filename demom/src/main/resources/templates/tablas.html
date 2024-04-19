@@ -68,13 +68,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
+                    <tr th:each="alumno : ${ListaAlumnos}">
+                        <td th:text="${alumno.apellido}"></td>
+                        <td th:text="${alumno.dirección}"></td>
+                        <td th:text="${alumno.fechaDeNacimiento}"></td>
+                        <td th:text="${alumno.teléfono}"></td>
+                        <td th:text="${alumno.DNI}"></td>
                     </tr>
                 </tbody>
             </table>

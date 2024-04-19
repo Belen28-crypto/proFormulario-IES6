@@ -12,6 +12,8 @@ import com.example.demom.models.alumno;
 import com.example.demom.service.alumnoServicio;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 
 @Controller
 
@@ -30,7 +32,9 @@ return "formulario";
 }
 
 @GetMapping("/tablas")
-public String tabla01(){
+public String tabla01(Model model){
+    List<alumno> listaAlumnos = alumnoServicio.obtenerTodosLosAlumnos();
+    model.addAttribute("listaAlumnos",listaAlumnos);
 return "tablas";
 }
 
@@ -38,7 +42,7 @@ return "tablas";
 @PostMapping ("/guardarAlumno")
 public String guardarAlumno (@ModelAttribute alumno alumno){
  alumnoServicio.guardarAlumno(alumno);
- return "redirect/"; 
+ return "redirect:/"; 
 }
 }
 

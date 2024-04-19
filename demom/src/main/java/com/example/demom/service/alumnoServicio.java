@@ -5,6 +5,8 @@ import com.example.demom.repository.alumnoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class alumnoServicio {
 
@@ -16,4 +18,9 @@ public class alumnoServicio {
     }
 
     
+public List<alumno> obtenerTodosLosAlumnos(){
+    return alumnoRepository.findAll();
+}
+
+
 }
