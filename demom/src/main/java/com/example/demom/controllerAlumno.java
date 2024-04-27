@@ -12,8 +12,11 @@ import com.example.demom.models.alumno;
 import com.example.demom.service.alumnoServicio;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 import java.util.List;
 
+import java.util.stream.Collectors;
 
 @Controller
 
@@ -34,7 +37,11 @@ return "formulario";
 @GetMapping("/tablas")
 public String tabla01(Model model){
     List<alumno> listaAlumnos = alumnoServicio.obtenerTodosLosAlumnos();
-    model.addAttribute("listaAlumnos",listaAlumnos);
+    List<alumno> alumnosConEstadoTrue = listaAlumnos.stream()
+    .filter(alumno -> Boolean.TRUE.equals(alumno.getState()))
+    .collect(Collectors.toList());
+    model.addAttribute("listaAlumnos",alumnosConEstadoTrue);
+
 return "tablas";
 }
 
@@ -42,8 +49,20 @@ return "tablas";
 @PostMapping ("/guardarAlumno")
 public String guardarAlumno (@ModelAttribute alumno alumno){
  alumnoServicio.guardarAlumno(alumno);
- return "redirect:/"; 
+ return "redirect:/tablas"; 
 }
+
+// post-busca los datos y se implementa una conexión con la carpet
+@PostMapping ("/eliminarAlumno/{DNI}")
+public String eliminarAlumno (@PathVariable String DNI) {
+    alumno alumno = alumnoServicio.buscadorAlumnoConElDni (DNI);
+    if (alumno != null) {
+        alumno.setState(false);
+        alumnoServicio.guardarAlumno(alumno); 
+    }
+    return "redirect:/tablas";
+}
+
 }
 
 

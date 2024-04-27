@@ -68,12 +68,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="alumno : ${ListaAlumnos}">
+                    <tr th:each="alumno : ${listaAlumnos}">
+                        <td th:text="${alumno.nombre}"></td>
                         <td th:text="${alumno.apellido}"></td>
-                        <td th:text="${alumno.dirección}"></td>
+                        <td th:text="${alumno.direccion}"></td>
                         <td th:text="${alumno.fechaDeNacimiento}"></td>
-                        <td th:text="${alumno.teléfono}"></td>
+                        <td th:text="${alumno.telefono}"></td>
                         <td th:text="${alumno.DNI}"></td>
+                        <td>
+                            <form th:action="@{/eliminarAlumno/{DNI} (DNI=${alumno.DNI})}" method="post"> 
+                                <button tipe="submit" class="btn btn-danger" > ELIMINAR </button>
+                            </form>
+                        </td>
                     </tr>
                 </tbody>
             </table>

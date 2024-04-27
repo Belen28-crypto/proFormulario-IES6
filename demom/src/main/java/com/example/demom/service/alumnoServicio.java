@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java .util.Optional;
 
 @Service
 public class alumnoServicio {
@@ -20,6 +21,10 @@ public class alumnoServicio {
     
 public List<alumno> obtenerTodosLosAlumnos(){
     return alumnoRepository.findAll();
+}
+public alumno buscadorAlumnoConElDni (String DNI){
+    Optional <alumno> optionalAlumno = alumnoRepository.findById(DNI);
+    return optionalAlumno .orElse(null);
 }
 
 
