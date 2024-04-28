@@ -52,7 +52,7 @@ public String guardarAlumno (@ModelAttribute alumno alumno){
  return "redirect:/tablas"; 
 }
 
-// post-busca los datos y se implementa una conexión con la carpet
+// post-busca los datos y se implementa una conexión con la carpeta
 @PostMapping ("/eliminarAlumno/{DNI}")
 public String eliminarAlumno (@PathVariable String DNI) {
     alumno alumno = alumnoServicio.buscadorAlumnoConElDni (DNI);
@@ -62,6 +62,18 @@ public String eliminarAlumno (@PathVariable String DNI) {
     }
     return "redirect:/tablas";
 }
+
+@PostMapping ("/editarAlumno/{DNI}")
+public String editarAlumno (@PathVariable String DNI, Model model){
+  alumno alumno = alumnoServicio.buscadorAlumnoConElDni(DNI);
+  if (alumno != null){
+    model.addAttribute("alumno",alumno); 
+    return "formularioActualizarAlumno";
+  }else{
+    return "redirect:/tablas";
+  }
+  }
+
 
 }
 

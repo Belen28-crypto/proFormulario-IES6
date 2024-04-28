@@ -79,6 +79,9 @@
                             <form th:action="@{/eliminarAlumno/{DNI} (DNI=${alumno.DNI})}" method="post"> 
                                 <button tipe="submit" class="btn btn-danger" > ELIMINAR </button>
                             </form>
+                            <form th:action="@{/editarAlumno/{DNI} (DNI=${alumno.DNI})}" method="post"> 
+                                <button tipe="submit" class="btn btn-primary" > EDITAR </button>
+                            </form>
                         </td>
                     </tr>
                 </tbody>
